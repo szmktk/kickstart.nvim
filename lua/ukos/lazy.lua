@@ -39,7 +39,6 @@ require("lazy").setup({
   },
   "wakatime/vim-wakatime",
   "tpope/vim-commentary",
-  "tpope/vim-fugitive",
   "tpope/vim-surround",
   "lewis6991/gitsigns.nvim",
   "christoomey/vim-tmux-navigator",
@@ -101,7 +100,6 @@ require("lazy").setup({
   },
 
   -- TODO check out these plugins after LSP is configured
-  -- "tpope/vim-fugitive",
   -- "tpope/vim-rhubarb",
   -- "tpope/vim-sleuth",
   -- { "folke/which-key.nvim", opts = {} },
