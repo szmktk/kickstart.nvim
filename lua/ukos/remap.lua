@@ -8,7 +8,7 @@ vim.keymap.set("n", "<leader>ve", "<cmd>vsplit $MYVIMRC<CR>")
 vim.keymap.set("n", "<leader>vs", "<cmd>source $MYVIMRC<CR>")
 vim.keymap.set("n", "<leader>vev", "<cmd>vsplit ~/.vimrc<CR>")
 
--- this was replaced by <C-L> in nvim 0.6.0 but 'vim-tmux-navigator' plugin already occupies <C-L>
+-- this was replaced by <C-L> in nvim 0.6.0 but "vim-tmux-navigator" plugin already occupies <C-L>
 vim.keymap.set("n", "<ESC><ESC>", "<cmd>nohlsearch<CR>")
 
 -- keep my buffer centered when navigating vertically
@@ -26,23 +26,23 @@ vim.keymap.set({"n", "v"}, "H", "^")
 vim.keymap.set({"n", "v"}, "L", "$")
 
 -- fzf remaps
-vim.keymap.set("n", "<C-F>", "<cmd>Rg<CR>")
-vim.keymap.set("n", "<C-N>", "<cmd>GFiles<CR>")
+-- vim.keymap.set("n", "<C-F>", "<cmd>Rg<CR>")  -- telescope got this
+-- vim.keymap.set("n", "<C-N>", "<cmd>GFiles<CR>")  -- telescope got this
 vim.keymap.set("n", "<leader>gc", "<cmd>GFiles?<CR>")
 vim.keymap.set("n", "<leader>af", "<cmd>Files<CR>")
-vim.keymap.set("n", "<leader>a", "<cmd>Buffers<CR>")
+-- vim.keymap.set("n", "<leader>a", "<cmd>Buffers<CR>")  -- telescope got this
 vim.keymap.set("n", "<leader>A", "<cmd>Windows<CR>")
 vim.keymap.set("n", "<leader>;", "<cmd>BLines<CR>")
 vim.keymap.set("n", "<leader>o", "<cmd>BTags<CR>")
 vim.keymap.set("n", "<leader>O", "<cmd>Tags<CR>")
-vim.keymap.set("n", "<leader>?", "<cmd>History<CR>")
+-- vim.keymap.set("n", "<leader>?", "<cmd>History<CR>")  -- telescope got this
 vim.keymap.set("n", "<leader>gl", "<cmd>Commits<CR>")
 vim.keymap.set("n", "<leader>ga", "<cmd>BCommits<CR>")
 vim.keymap.set("n", "<leader>ft", "<cmd>Filetypes<CR>")
 
 -- remaps for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- other remaps
 vim.keymap.set("n", "<leader>gs", "<cmd>Git<CR>")
