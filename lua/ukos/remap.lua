@@ -40,6 +40,10 @@ vim.keymap.set("n", "<leader>gl", "<cmd>Commits<CR>")
 vim.keymap.set("n", "<leader>ga", "<cmd>BCommits<CR>")
 vim.keymap.set("n", "<leader>ft", "<cmd>Filetypes<CR>")
 
+-- remaps for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
 -- other remaps
 vim.keymap.set("n", "<leader>gs", "<cmd>Git<CR>")
 vim.keymap.set("n", "<leader>gk", "<cmd>vertical Git<CR>")
