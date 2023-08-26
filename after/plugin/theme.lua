@@ -17,30 +17,30 @@ theme.load()
 -- vim.opt.termguicolors = true
 -- vim.opt.background = "dark"
 
--- require("lualine").setup {
---   options = {
---     -- theme = "onedark"  -- requies onedark.nvim to be loaded
---     theme = "moonfly"
---   },
---   sections = {
---     lualine_c = {
---       {
---         "filename",
---         file_status = true,
---         newfile_status = true,
---         path = 1,  -- 1: Relative path
---       }
---     }
---   },
---   inactive_sections = {
---     lualine_c = {
---       {
---         "filename",
---         file_status = true,
---         newfile_status = true,
---         path = 1,  -- 1: Relative path
---       }
---     }
---   }
--- }
+require("lualine").setup {
+  options = {
+    theme = "onedark"  -- requies onedark.nvim to be loaded
+    -- theme = "moonfly"
+  },
+  sections = {
+    lualine_c = {
+      {
+        "filename",
+        file_status = true,
+        newfile_status = true,
+        path = 1,  -- 1: Relative path
+      }
+    }
+  },
+  inactive_sections = {
+    lualine_c = {
+      {
+        "filename",
+        file_status = true,
+        newfile_status = true,
+        path = 1,  -- 1: Relative path
+      }
+    }
+  }
+}
 

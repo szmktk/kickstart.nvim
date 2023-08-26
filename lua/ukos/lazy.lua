@@ -13,8 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 
-  { "briones-gabriel/darcula-solid.nvim", dependencies = { "rktjmp/lush.nvim" } },
-  "navarasu/onedark.nvim",
+  { "briones-gabriel/darcula-solid.nvim", dependencies = { "rktjmp/lush.nvim" }, priority=1000 },
+  { "navarasu/onedark.nvim", priority=1000 },
   { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons", lazy = true } },
 
   {
