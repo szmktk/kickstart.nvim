@@ -31,7 +31,7 @@ vim.keymap.set({"n", "v"}, "L", "$")
 vim.keymap.set("n", "<leader>gc", "<cmd>GFiles?<CR>")
 vim.keymap.set("n", "<leader>af", "<cmd>Files<CR>")
 -- vim.keymap.set("n", "<leader>a", "<cmd>Buffers<CR>")  -- telescope got this
-vim.keymap.set("n", "<leader>A", "<cmd>Windows<CR>")
+-- vim.keymap.set("n", "<leader>A", "<cmd>Windows<CR>")  -- conflicts with treesitter's swap_prev
 vim.keymap.set("n", "<leader>;", "<cmd>BLines<CR>")
 vim.keymap.set("n", "<leader>o", "<cmd>BTags<CR>")
 vim.keymap.set("n", "<leader>O", "<cmd>Tags<CR>")
@@ -70,4 +70,5 @@ vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>")
 vim.keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>")
 vim.keymap.set("n", "<leader>rs", "<cmd>source Session.vim<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<C-_>", "<cmd>Commentary<CR>")
 

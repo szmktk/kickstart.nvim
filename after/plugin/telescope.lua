@@ -1,25 +1,21 @@
+local actions = require("telescope.actions")
+
 require("telescope").setup {
   defaults = {
     mappings = {
       i = {
         ["<C-u>"] = false,
         ["<C-d>"] = false,
+        ["<esc>"] = actions.close,
       },
     },
   },
-}
-
-local actions = require("telescope.actions")
-
-require("telescope").setup({
-    defaults = {
-        mappings = {
-            i = {
-                ["<esc>"] = actions.close,
-            },
-        },
+  pickers = {
+    find_files = {
+      hidden = true
     },
-})
+  },
+}
 
 -- Enable telescope fzf native, if installed
 pcall(require("telescope").load_extension, "fzf")

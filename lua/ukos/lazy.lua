@@ -102,9 +102,10 @@ require("lazy").setup({
   -- TODO check out these plugins after LSP is configured
   -- "tpope/vim-rhubarb",
   -- "tpope/vim-sleuth",
-  -- "mbbill/undotree",
+  -- "mbbill/undotree",  -- already mentioned up top!
   -- { "folke/which-key.nvim", opts = {} },
   -- { "numToStr/Comment.nvim", opts = {} },  -- "gc" to comment visual regions/lines
+  -- "RRethy/vim-illuminate",
   -- {
   --   -- Add indentation guides even on blank lines
   --   "lukas-reineke/indent-blankline.nvim",
