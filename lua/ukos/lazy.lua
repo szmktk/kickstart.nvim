@@ -19,9 +19,9 @@ require("lazy").setup({
 
   {
     "nvim-treesitter/nvim-treesitter",
-    -- dependencies = {
-    --   "nvim-treesitter/nvim-treesitter-textobjects",
-    -- },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
     build = ":TSUpdate",
   },
   "nvim-treesitter/playground",
@@ -102,6 +102,7 @@ require("lazy").setup({
   -- TODO check out these plugins after LSP is configured
   -- "tpope/vim-rhubarb",
   -- "tpope/vim-sleuth",
+  -- "mbbill/undotree",
   -- { "folke/which-key.nvim", opts = {} },
   -- { "numToStr/Comment.nvim", opts = {} },  -- "gc" to comment visual regions/lines
   -- {
