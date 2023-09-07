@@ -42,7 +42,17 @@ end
 
 local servers = {
   -- clangd = {},
-  gopls = {},
+  gopls = {
+    settings = {
+      gopls = {
+        completeUnimported = true,
+        usePlaceholders = true,
+        analyses = {
+          unusedparams = true,
+        },
+      },
+    },
+  },
   pyright = {},
   tsserver = {},
   yamlls = {},
