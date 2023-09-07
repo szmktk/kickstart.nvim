@@ -14,6 +14,14 @@ autocmd("TextYankPost", {
   desc = "Briefly highlight yanked text",
 })
 
+autocmd({"BufLeave", "FocusLost"}, {
+  group = custom_au_cmd_group,
+  pattern = "*",
+  -- command = "silent! wall",
+  command = "wall",
+  desc = "Save changes in current buffer when leaving or losing focus",
+})
+
 autocmd({ "BufWritePre" }, {
   group = custom_au_cmd_group,
   pattern = "*",
@@ -30,9 +38,8 @@ autocmd({ "CursorHold", "CursorHoldI", "FocusGained", "BufEnter" }, {
 
 autocmd({ "FileType" }, {
   group = filetype_au_cmd_group,
-  pattern = { "java", "py", "md" },
+  pattern = { "java", "py", "md", "go" },
   command = "setlocal tabstop=4 softtabstop=4 shiftwidth=4",
   desc = "Set tabs to four spaces for given file types",
   -- override locally with "setlocal tabstop=2 softtabstop=2 shiftwidth=2"
 })
-
