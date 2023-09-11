@@ -1,6 +1,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 local custom_au_cmd_group = vim.api.nvim_create_augroup("CustomAutoCommandGroup", { clear = true })
 local filetype_au_cmd_group = vim.api.nvim_create_augroup("FileTypeAutoCommandGroup", { clear = true })
+local go_au_cmd_group = vim.api.nvim_create_augroup("GoAutoCommandGroup", { clear = true })
 
 autocmd("TextYankPost", {
   group = custom_au_cmd_group,
@@ -14,7 +15,7 @@ autocmd("TextYankPost", {
   desc = "Briefly highlight yanked text",
 })
 
-autocmd({"BufLeave", "FocusLost"}, {
+autocmd({ "BufLeave", "FocusLost" }, {
   group = custom_au_cmd_group,
   pattern = "*",
   -- command = "silent! wall",
@@ -27,6 +28,15 @@ autocmd({ "BufWritePre" }, {
   pattern = "*",
   command = [[%s/\s\+$//e]],
   desc = "Trim whitespace before saving the current buffer",
+})
+
+autocmd({ "BufWritePre" }, {
+  group = go_au_cmd_group,
+  pattern = "*.go",
+  callback = function()
+    require('go.format').goimport()
+  end,
+  desc = "Run gofmt and organize imports before saving the current buffer"
 })
 
 autocmd({ "CursorHold", "CursorHoldI", "FocusGained", "BufEnter" }, {

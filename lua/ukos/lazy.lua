@@ -98,6 +98,19 @@ require("lazy").setup({
       },
     },
   },
+  {
+    "ray-x/go.nvim",
+    dependencies = {
+      "ray-x/guihua.lua",
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("go").setup()
+    end,
+    event = {"CmdlineEnter"},
+    ft = {"go", 'gomod'},
+  },
 
   -- TODO check out these plugins after LSP is configured
   -- "tpope/vim-rhubarb",
