@@ -71,4 +71,3 @@ vim.keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>")
 vim.keymap.set("n", "<leader>rs", "<cmd>source Session.vim<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<C-_>", "<cmd>Commentary<CR>")
-

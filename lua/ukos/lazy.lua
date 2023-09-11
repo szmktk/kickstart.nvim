@@ -12,10 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-
-  { "briones-gabriel/darcula-solid.nvim", dependencies = { "rktjmp/lush.nvim" }, priority=1000 },
-  { "navarasu/onedark.nvim", priority=1000 },
-  { "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons", lazy = true } },
+  { "briones-gabriel/darcula-solid.nvim", dependencies = { "rktjmp/lush.nvim" },                        priority = 1000 },
+  { "navarasu/onedark.nvim",              priority = 1000 },
+  { "nvim-lualine/lualine.nvim",          dependencies = { "nvim-tree/nvim-web-devicons", lazy = true } },
 
   {
     "nvim-treesitter/nvim-treesitter",
@@ -39,11 +38,13 @@ require("lazy").setup({
   },
   "wakatime/vim-wakatime",
   "tpope/vim-commentary",
+  -- { "numToStr/Comment.nvim",   opts = {},     lazy = false },
   "tpope/vim-surround",
   "lewis6991/gitsigns.nvim",
   "christoomey/vim-tmux-navigator",
   "ThePrimeagen/vim-be-good",
   "windwp/nvim-autopairs",
+  "RRethy/vim-illuminate",
   "kdheepak/lazygit.nvim",
 
   { "akinsho/toggleterm.nvim", version = "*", config = true },
@@ -58,7 +59,7 @@ require("lazy").setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require("fidget").setup({})`
-      { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
+      { "j-hui/fidget.nvim",       tag = "legacy", opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       "folke/neodev.nvim",
@@ -99,6 +100,15 @@ require("lazy").setup({
     },
   },
   {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {},
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  },
+  {
     "ray-x/go.nvim",
     dependencies = {
       "ray-x/guihua.lua",
@@ -108,8 +118,8 @@ require("lazy").setup({
     config = function()
       require("go").setup()
     end,
-    event = {"CmdlineEnter"},
-    ft = {"go", 'gomod'},
+    event = { "CmdlineEnter" },
+    ft = { "go", 'gomod' },
   },
 
   -- TODO check out these plugins after LSP is configured
