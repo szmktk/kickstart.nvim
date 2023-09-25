@@ -2,12 +2,18 @@
 local theme = require("onedark")
 
 theme.setup {
-    -- style = "dark" -- default
-    -- style = "darker"
-    -- style = "cool"
-    -- style = "deep"
-    -- style = "warm"
-    style = "warmer"
+  -- style = "dark" -- default
+  -- style = "darker"
+  -- style = "cool"
+  -- style = "deep"
+  -- style = "warm"
+  style = "warmer",
+  highlights = {
+    -- https://github.com/RRethy/vim-illuminate/issues/154#issuecomment-1400005544
+    IlluminatedWordText = { bg = "#32424f" },
+    IlluminatedWordRead = { bg = "#32424f" },
+    IlluminatedWordWrite = { bg = "#32424f" },
+  },
 }
 
 theme.load()
@@ -19,7 +25,7 @@ theme.load()
 
 require("lualine").setup {
   options = {
-    theme = "onedark"  -- requies onedark.nvim to be loaded
+    theme = "onedark" -- requies onedark.nvim to be loaded
     -- theme = "moonfly"
   },
   sections = {
@@ -28,7 +34,7 @@ require("lualine").setup {
         "filename",
         file_status = true,
         newfile_status = true,
-        path = 1,  -- 1: Relative path
+        path = 1, -- 1: Relative path
       }
     }
   },
@@ -38,9 +44,8 @@ require("lualine").setup {
         "filename",
         file_status = true,
         newfile_status = true,
-        path = 1,  -- 1: Relative path
+        path = 1, -- 1: Relative path
       }
     }
   }
 }
-
