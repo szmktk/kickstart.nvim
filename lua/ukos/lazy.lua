@@ -91,7 +91,7 @@ require("lazy").setup({
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         -- NOTE: If you are having trouble with this installation,
-        --       refer to the README for telescope-fzf-native for more instructions.
+        -- refer to the README for telescope-fzf-native for more instructions.
         build = "make",
         cond = function()
           return vim.fn.executable "make" == 1
@@ -102,11 +102,27 @@ require("lazy").setup({
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {},
+    opts = {
+      presets = {
+        bottom_search = false,        -- use a classic bottom cmdline for search
+        command_palette = false,      -- position the cmdline and popupmenu together
+        long_message_to_split = true, -- long messages will be sent to a split
+        inc_rename = false,           -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = true,        -- add a border to hover docs and signature help
+      },
+    },
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     }
+  },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      position = "bottom",
+      height = 20,
+    },
   },
   {
     "ray-x/go.nvim",
