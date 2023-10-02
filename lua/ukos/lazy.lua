@@ -25,7 +25,7 @@ require("lazy").setup({
   },
   "nvim-treesitter/playground",
   -- "theprimeagen/harpoon",
-  -- "mbbill/undotree",
+  "mbbill/undotree",
   "mhinz/vim-startify",
   "airblade/vim-rooter",
   {
@@ -157,7 +157,6 @@ require("lazy").setup({
   -- TODO check out these plugins after LSP is configured
   -- "tpope/vim-rhubarb",
   -- "tpope/vim-sleuth",
-  -- "mbbill/undotree",  -- already mentioned up top!
   -- { "folke/which-key.nvim", opts = {} },
   -- { "numToStr/Comment.nvim", opts = {} },  -- "gc" to comment visual regions/lines
   -- "RRethy/vim-illuminate",
