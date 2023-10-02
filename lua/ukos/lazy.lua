@@ -131,6 +131,16 @@ require("lazy").setup({
     end
   },
   {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      keywords = {
+        -- available colors: info, warning, hint, test
+        OMG = { icon = " ", color = "hint", alt = { "YAY", "WTF" } },
+      },
+    }
+  },
+  {
     "ray-x/go.nvim",
     dependencies = {
       "ray-x/guihua.lua",
