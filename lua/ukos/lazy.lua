@@ -125,6 +125,12 @@ require("lazy").setup({
     },
   },
   {
+    "rmagatti/goto-preview",
+    config = function()
+      require("goto-preview").setup()
+    end
+  },
+  {
     "ray-x/go.nvim",
     dependencies = {
       "ray-x/guihua.lua",
