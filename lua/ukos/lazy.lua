@@ -46,6 +46,7 @@ require("lazy").setup({
   "windwp/nvim-autopairs",
   "RRethy/vim-illuminate",
   "kdheepak/lazygit.nvim",
+  "Eandrju/cellular-automaton.nvim",
 
   { "akinsho/toggleterm.nvim", version = "*", config = true },
 

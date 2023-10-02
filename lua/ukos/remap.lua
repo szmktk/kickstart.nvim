@@ -73,6 +73,11 @@ vim.keymap.set("n", "gpD", "<cmd>lua require('goto-preview').goto_preview_declar
 vim.keymap.set("n", "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>", { noremap = true })
 vim.keymap.set("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>", { noremap = true })
 
+-- cellular-automaton remaps
+vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>")
+vim.keymap.set("n", "<leader>mir", "<cmd>CellularAutomaton make_it_rain<CR>")
+vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton scramble<CR>")
+
 -- other remaps
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>")
 vim.keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>")
