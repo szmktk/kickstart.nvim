@@ -141,6 +141,13 @@ require("lazy").setup({
     }
   },
   {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {
+      indent = { char = "┊" },
+    },
+  },
+  {
     "ray-x/go.nvim",
     dependencies = {
       "ray-x/guihua.lua",
@@ -153,21 +160,4 @@ require("lazy").setup({
     event = { "CmdlineEnter" },
     ft = { "go", 'gomod' },
   },
-
-  -- TODO check out these plugins after LSP is configured
-  -- "tpope/vim-rhubarb",
-  -- "tpope/vim-sleuth",
-  -- { "folke/which-key.nvim", opts = {} },
-  -- { "numToStr/Comment.nvim", opts = {} },  -- "gc" to comment visual regions/lines
-  -- "RRethy/vim-illuminate",
-  -- {
-  --   -- Add indentation guides even on blank lines
-  --   "lukas-reineke/indent-blankline.nvim",
-  --   -- Enable `lukas-reineke/indent-blankline.nvim`
-  --   -- See `:help indent_blankline.txt`
-  --   opts = {
-  --     char = "┊",
-  --     show_trailing_blankline_indent = false,
-  --   },
-  -- },
 })
