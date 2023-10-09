@@ -6,6 +6,8 @@ require("telescope").setup {
       i = {
         -- ["<C-u>"] = false,
         -- ["<C-d>"] = false,
+        ["<C-j>"] = require('telescope.actions').move_selection_next,
+        ["<C-k>"] = require('telescope.actions').move_selection_previous,
         ["<esc>"] = actions.close,
       },
     },
@@ -40,4 +42,3 @@ vim.keymap.set("n", "<leader>sw", require("telescope.builtin").grep_string, { de
 vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
 vim.keymap.set("n", "<leader>tt", require("telescope.builtin").builtin, { desc = "[T]elescope builtin" })
 vim.keymap.set("n", "<leader>gs", require("telescope.builtin").git_status, { desc = "[G]it [S]tatus" })
-
