@@ -46,6 +46,10 @@ require("lazy").setup({
   "windwp/nvim-autopairs",
   "RRethy/vim-illuminate",
   "kdheepak/lazygit.nvim",
+  "tpope/vim-fugitive", -- need this one just because I want to use vim-rhubarb
+  "tpope/vim-rhubarb",
+  "shumphrey/fugitive-gitlab.vim", -- adds GitLab suppport to vim-rhubarb
+  "tpope/vim-sleuth",
   "Eandrju/cellular-automaton.nvim",
 
   { "akinsho/toggleterm.nvim", version = "*", config = true },
