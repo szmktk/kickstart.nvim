@@ -46,12 +46,11 @@ require("lazy").setup({
   "windwp/nvim-autopairs",
   "RRethy/vim-illuminate",
   "kdheepak/lazygit.nvim",
-  "tpope/vim-fugitive", -- need this one just because I want to use vim-rhubarb
+  "tpope/vim-fugitive",            -- need this one just because I want to use vim-rhubarb
   "tpope/vim-rhubarb",
   "shumphrey/fugitive-gitlab.vim", -- adds GitLab suppport to vim-rhubarb
   "tpope/vim-sleuth",
   "Eandrju/cellular-automaton.nvim",
-
   { "akinsho/toggleterm.nvim", version = "*", config = true },
 
   {
@@ -171,4 +170,17 @@ require("lazy").setup({
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
+
+  -- DAP - Debug Adapter Protocol
+  { "mfussenegger/nvim-dap" },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap" }
+  },
+  {
+    "leoluz/nvim-dap-go",
+    ft = "go",
+    dependencies = "mfussenegger/nvim-dap",
+  },
+  "theHamsta/nvim-dap-virtual-text",
 })

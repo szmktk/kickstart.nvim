@@ -75,6 +75,17 @@ map("n", "gpD", "<cmd>lua require('goto-preview').goto_preview_declaration()<CR>
 map("n", "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>", { noremap = true })
 map("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>", { noremap = true })
 
+-- DAP remaps
+map("n", "<leader>dt", "<cmd>DapUiToggle<CR>", { noremap = true, silent = true })
+map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { noremap = true, silent = true })
+map("n", "<leader>dc", "<cmd>DapContinue<CR>", { noremap = true, silent = true })
+map("n", "<leader>dr", "<cmd>lua require('dapui').open({reset = true})<CR>", { noremap = true, silent = true })
+map("n", "<F2>", "<cmd>DapStop<CR>", { desc = "Stop DAP (F2)", noremap = true, silent = true })
+map("n", "<F7>", "<cmd>DapStepInto<CR>", { desc = "Step Into (F7)", noremap = true, silent = true })
+map("n", "<F8>", "<cmd>DapStepOver<CR>", { desc = "Step Over (F8)", noremap = true, silent = true })
+map("n", "<S-F8>", "<cmd>DapStepOut<CR>", { desc = "Step Out (SHIFT + F8)", noremap = true, silent = true })
+map("n", "<F9>", "<cmd>DapContinue<CR>", { desc = "Start/Continue (F9)", noremap = true, silent = true })
+
 -- cellular-automaton remaps
 map("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>")
 map("n", "<leader>mir", "<cmd>CellularAutomaton make_it_rain<CR>")
@@ -89,5 +100,5 @@ map("n", "<C-_>", "<cmd>Commentary<CR>")
 map("n", "<leader>xx", "<cmd>TroubleToggle<CR>")
 map("n", "<leader>6", "<cmd>TodoTrouble<CR>")
 map("n", "<leader>u", "<cmd>UndotreeToggle<CR>")
-map("n", "<leader>nn", ":NoiceDismiss<CR>", {noremap=true})
-map("n", "QQ", ":qa<enter>", {noremap=false})
+map("n", "<leader>nn", "<cmd>NoiceDismiss<CR>", { noremap = true, silent = true })
+map("n", "QQ", "<cmd>qa<enter>", { noremap = false })
