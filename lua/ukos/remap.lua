@@ -6,9 +6,15 @@ map("n", "Q", "<nop>")
 -- quick escape from INSERT mode
 map("i", "jk", "<ESC>")
 
+-- quick exit (works best with "autowriteall" option, without it a "!" is necessary)
+map("n", "QQ", "<cmd>qa<enter>", { noremap = false })
+
 map("n", "<leader>ve", "<cmd>vsplit $MYVIMRC<CR>")
 map("n", "<leader>vs", "<cmd>source $MYVIMRC<CR>")
 map("n", "<leader>vev", "<cmd>vsplit ~/.vimrc<CR>")
+
+-- format current buffer with LSP
+map("n", "<leader>f", vim.lsp.buf.format)
 
 -- this was replaced by <C-L> in nvim 0.6.0 but "vim-tmux-navigator" plugin already occupies <C-L>
 map("n", "<ESC><ESC>", "<cmd>nohlsearch<CR>")
@@ -75,6 +81,10 @@ map("n", "gpD", "<cmd>lua require('goto-preview').goto_preview_declaration()<CR>
 map("n", "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>", { noremap = true })
 map("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>", { noremap = true })
 
+-- prettify and minify json with `jq`
+map("n", "<leader>jp", "<cmd>%!jq<CR>")
+map("n", "<leader>jm", "<cmd>%!jq -c<CR>")
+
 -- DAP remaps
 map("n", "<leader>dt", "<cmd>DapUiToggle<CR>", { noremap = true, silent = true })
 map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { noremap = true, silent = true })
@@ -95,14 +105,16 @@ map("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>")
 map("n", "<leader>mir", "<cmd>CellularAutomaton make_it_rain<CR>")
 map("n", "<leader>fml", "<cmd>CellularAutomaton scramble<CR>")
 
--- other remaps
+-- various plugin launchers
 map("n", "<leader>lg", "<cmd>LazyGit<CR>")
-map("n", "<leader>tw", "<cmd>set wrap!<CR>")
-map("n", "<leader>rs", "<cmd>source Session.vim<CR>")
-map("n", "<leader>f", vim.lsp.buf.format)
-map("n", "<C-_>", "<cmd>Commentary<CR>")
 map("n", "<leader>xx", "<cmd>TroubleToggle<CR>")
 map("n", "<leader>6", "<cmd>TodoTrouble<CR>")
 map("n", "<leader>u", "<cmd>UndotreeToggle<CR>")
+
+-- comment out a single line with CTRL+/
+map("n", "<C-_>", "<cmd>Commentary<CR>")
+
+-- other remaps
+map("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "[T]oggle word [W]rap" })
+map("n", "<leader>rs", "<cmd>source Session.vim<CR>", { desc = "[R]estore [S]ession" })
 map("n", "<leader>nn", "<cmd>NoiceDismiss<CR>", { noremap = true, silent = true })
-map("n", "QQ", "<cmd>qa<enter>", { noremap = false })
