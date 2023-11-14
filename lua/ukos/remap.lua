@@ -118,3 +118,18 @@ map("n", "<C-_>", "<cmd>Commentary<CR>")
 map("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "[T]oggle word [W]rap" })
 map("n", "<leader>rs", "<cmd>source Session.vim<CR>", { desc = "[R]estore [S]ession" })
 map("n", "<leader>nn", "<cmd>NoiceDismiss<CR>", { noremap = true, silent = true })
+
+-- barbar remaps
+map("n", "<leader>bn", "<cmd>BufferNext<CR>", { silent = true })
+map("n", "<leader>bp", "<cmd>BufferPrevious<CR>", { silent = true })
+
+-- does not seem to work on MacOS
+map("n", "<C-1>", "<Cmd>BufferGoto 1<CR>", { silent = true })
+map("n", "<C-2>", "<Cmd>BufferGoto 2<CR>", { silent = true })
+map("n", "<C-3>", "<Cmd>BufferGoto 3<CR>", { silent = true })
+map("n", "<C-4>", "<Cmd>BufferGoto 4<CR>", { silent = true })
+map("n", "<C-5>", "<Cmd>BufferGoto 5<CR>", { silent = true })
+map("n", "<C-6>", "<Cmd>BufferGoto 6<CR>", { silent = true })
+map("n", "<C-7>", "<Cmd>BufferGoto 7<CR>", { silent = true })
+map("n", "<C-8>", "<Cmd>BufferGoto 8<CR>", { silent = true })
+map("n", "<C-9>", "<Cmd>BufferGoto 9<CR>", { silent = true })
