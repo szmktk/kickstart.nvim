@@ -62,8 +62,8 @@ require("lazy").setup({
       "williamboman/mason-lspconfig.nvim",
 
       -- Useful status updates for LSP
-      -- NOTE: `opts = {}` is the same as calling `require("fidget").setup({})`
-      { "j-hui/fidget.nvim",       tag = "legacy", opts = {} },
+      -- `opts = {}` is the same as calling `require("fidget").setup({})`
+      { "j-hui/fidget.nvim",       opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       "folke/neodev.nvim",
@@ -94,7 +94,7 @@ require("lazy").setup({
       -- requirements installed.
       {
         "nvim-telescope/telescope-fzf-native.nvim",
-        -- NOTE: If you are having trouble with this installation,
+        -- If you are having trouble with this installation,
         -- refer to the README for telescope-fzf-native for more instructions.
         build = "make",
         cond = function()
