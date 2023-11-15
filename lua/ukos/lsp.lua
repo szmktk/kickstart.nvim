@@ -41,6 +41,11 @@ local on_attach = function(_, bufnr)
   end, { desc = "Format current buffer with LSP" })
 end
 
+-- mason-lspconfig requires that these setup functions are called in this order
+-- before setting up the servers.
+require('mason').setup()
+require('mason-lspconfig').setup()
+
 local servers = {
   -- clangd = {},
   gopls = {
