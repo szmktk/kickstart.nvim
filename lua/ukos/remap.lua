@@ -9,12 +9,11 @@ map("i", "jk", "<ESC>")
 -- quick exit (works best with "autowriteall" option, without it a "!" is necessary)
 map("n", "QQ", "<cmd>qa<enter>", { noremap = false })
 
-map("n", "<leader>ve", "<cmd>vsplit $MYVIMRC<CR>")
-map("n", "<leader>vs", "<cmd>source $MYVIMRC<CR>")
-map("n", "<leader>vev", "<cmd>vsplit ~/.vimrc<CR>")
+map("n", "<leader>ve", "<cmd>vsplit $MYVIMRC<CR>", { desc = "[V]ertical [E]dit $MYVIMRC" })
+map("n", "<leader>vs", "<cmd>source $MYVIMRC<CR>", { desc = "Source $MYVIMRC" })
+map("n", "<leader>vev", "<cmd>vsplit ~/.vimrc<CR>", { desc = "[V]ertical [E]dit [V]imrc" })
 
--- format current buffer with LSP
-map("n", "<leader>f", vim.lsp.buf.format)
+map("n", "<leader>f", vim.lsp.buf.format, { desc = "Format current buffer with LSP" })
 
 -- this was replaced by <C-L> in nvim 0.6.0 but "vim-tmux-navigator" plugin already occupies <C-L>
 map("n", "<ESC><ESC>", "<cmd>nohlsearch<CR>")
@@ -36,17 +35,18 @@ map({ "n", "v" }, "L", "$")
 -- fzf remaps
 -- map("n", "<C-F>", "<cmd>Rg<CR>")  -- telescope got this
 -- map("n", "<C-N>", "<cmd>GFiles<CR>")  -- telescope got this
-map("n", "<leader>gc", "<cmd>GFiles?<CR>")
-map("n", "<leader>af", "<cmd>Files<CR>")
+map("n", "<leader>gc", "<cmd>GFiles?<CR>", { desc = "FZF show [G]it [C]hanged files" })
+map("n", "<leader>af", "<cmd>Files<CR>", { desc = "FZF show [A]ll [F]iles" })
 -- map("n", "<leader>a", "<cmd>Buffers<CR>")  -- telescope got this
 -- map("n", "<leader>A", "<cmd>Windows<CR>")  -- conflicts with treesitter's swap_prev
-map("n", "<leader>;", "<cmd>BLines<CR>")
-map("n", "<leader>o", "<cmd>BTags<CR>")
-map("n", "<leader>O", "<cmd>Tags<CR>")
+map("n", "<leader>;", "<cmd>BLines<CR>", { desc = "FZF search lines in the current buffer" })
+map("n", "<leader>o", "<cmd>BTags<CR>", { desc = "FZF show tags in the current buffer" })
+map("n", "<leader>O", "<cmd>Tags<CR>", { desc = "FZF show tags in the project (ctags -R)" })
 -- map("n", "<leader>?", "<cmd>History<CR>")  -- telescope got this
-map("n", "<leader>gl", "<cmd>Commits<CR>")
-map("n", "<leader>ga", "<cmd>BCommits<CR>")
-map("n", "<leader>ft", "<cmd>Filetypes<CR>")
+map("n", "<leader>gl", "<cmd>Commits<CR>", { desc = "FZF show [G]it commit [L]og" })
+map("n", "<leader>ga", "<cmd>BCommits<CR>", { desc = "FZF show [G]it [A]ll commits for the current buffer" }) -- visual-select lines to track changes in the range
+map("n", "<leader>ft", "<cmd>Filetypes<CR>", { desc = "FZF show [F]ile [T]ypes" })
+map("n", "<leader>m", "<cmd>Maps<CR>", { desc = "FZF show normal mode [M]appings" })
 
 -- remaps for dealing with word wrap
 map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -74,22 +74,30 @@ map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list
 -- map("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- goto-preview plugin remaps
-map("n", "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
-map("n", "gpt", "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", { noremap = true })
-map("n", "gpi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", { noremap = true })
-map("n", "gpD", "<cmd>lua require('goto-preview').goto_preview_declaration()<CR>", { noremap = true })
-map("n", "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>", { noremap = true })
-map("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>", { noremap = true })
+map("n", "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
+  { desc = "[G]oto [P]review [D]efinition", noremap = true })
+map("n", "gpt", "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>",
+  { desc = "Goto [P]review [T]ype definition", noremap = true })
+map("n", "gpi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>",
+  { desc = "[G]oto [P]review [I]mplementation", noremap = true })
+map("n", "gpD", "<cmd>lua require('goto-preview').goto_preview_declaration()<CR>",
+  { desc = "[G]oto [P]review [D]eclaration", noremap = true })
+map("n", "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>",
+  { desc = "Goto Preview close all windows", noremap = true })
+map("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>",
+  { desc = "[G]oto [P]review [R]eferences", noremap = true })
 
 -- prettify and minify json with `jq`
-map("n", "<leader>jp", "<cmd>%!jq<CR>")
-map("n", "<leader>jm", "<cmd>%!jq -c<CR>")
+map("n", "<leader>jp", "<cmd>%!jq<CR>", { desc = "[J]son [P]arse" })
+map("n", "<leader>jm", "<cmd>%!jq -c<CR>", { desc = "[J]son [M]inify" })
 
 -- DAP remaps
-map("n", "<leader>dt", "<cmd>DapUiToggle<CR>", { noremap = true, silent = true })
-map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { noremap = true, silent = true })
-map("n", "<leader>dc", "<cmd>DapContinue<CR>", { noremap = true, silent = true })
-map("n", "<leader>dr", "<cmd>lua require('dapui').open({reset = true})<CR>", { noremap = true, silent = true })
+map("n", "<leader>dt", "<cmd>DapUiToggle<CR>", { desc = "[D]ebug UI [T]oggle", noremap = true, silent = true })
+map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>",
+  { desc = "[D]ebug Toggle [B]reakpoint", noremap = true, silent = true })
+map("n", "<leader>dc", "<cmd>DapContinue<CR>", { desc = "[D]ebug [C]ontinue", noremap = true, silent = true })
+map("n", "<leader>dr", "<cmd>lua require('dapui').open({reset = true})<CR>",
+  { desc = "[D]ebug [R]eset UI", noremap = true, silent = true })
 map("n", "<F2>", "<cmd>DapTerminate<CR>", { desc = "Stop DAP (F2)", noremap = true, silent = true })
 map("n", "<F7>", "<cmd>DapStepInto<CR>", { desc = "Step Into (F7)", noremap = true, silent = true })
 map("n", "<F8>", "<cmd>DapStepOver<CR>", { desc = "Step Over (F8)", noremap = true, silent = true })
