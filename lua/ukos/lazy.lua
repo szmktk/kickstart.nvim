@@ -149,7 +149,7 @@ require("lazy").setup({
     event = "VeryLazy",
     init = function()
       vim.o.timeout = true
-      vim.o.timeoutlen = 500
+      vim.o.timeoutlen = 2000
     end,
     opts = {}
   },
